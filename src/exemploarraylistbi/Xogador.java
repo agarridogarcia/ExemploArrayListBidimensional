@@ -2,6 +2,8 @@
 
 package exemploarraylistbi;
 
+import java.util.Objects;
+
 public class Xogador {
       private String nome;
       private int dorsal;
@@ -30,10 +32,7 @@ public class Xogador {
         this.dorsal = dorsal;
     }
 
-    @Override
-    public String toString() {
-        return "Xogador{" + "nome=" + nome + ", dorsal=" + dorsal + '}';
-    }
+    
 
     @Override
     public int hashCode() {
@@ -42,7 +41,7 @@ public class Xogador {
         return hash;
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -55,7 +54,34 @@ public class Xogador {
             return false;
         }
         return true;
+    }*/
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Xogador other = (Xogador) obj;
+        if (this.dorsal != other.dorsal) {
+            return false;
+        }
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return true;
     }
+
+    @Override
+    public String toString() {
+        return "Xogador{" + "nome=" + nome + ", dorsal=" + dorsal + '}';
+    }
+    
       
       
       

@@ -2,6 +2,7 @@
 
 package exemploarraylistbi;
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 public class Liga {
@@ -65,4 +66,30 @@ public class Liga {
    return equipo;
     
 }
+     public void darBaixa(){
+         System.out.println("Nome xogador dar de baixa: ");
+         String nome=pedirString();
+       
+         System.out.println("Dorsal xogador dar de baixa: ");
+        int dorsal=pedirInt();
+        
+      for(int i =0;i< liga.size();i++){
+        for (int j=0;j<liga.get(i).size();j++){
+           
+             if(dorsal== liga.get(i).get(j).getDorsal() && nome.equals((liga.get(i).get(j).getNome()))){
+               liga.remove(liga.get(i).get(j));
+               liga.get(i).remove(j);
+              
+        
+           
+             }
+        }
+          
+      }
+    }
 }
+     
+             
+    
+
+
